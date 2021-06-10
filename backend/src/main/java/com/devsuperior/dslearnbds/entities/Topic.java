@@ -54,6 +54,7 @@ public class Topic implements Serializable {
     @JoinColumn(name = "answer_id")
     private Reply answer;
 
+    @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "topic")
     private Set<Reply> replies = new HashSet<>();
 
