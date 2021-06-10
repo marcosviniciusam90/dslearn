@@ -37,4 +37,8 @@ public class Offer implements Serializable {
     @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "offer")
     private Set<Resource> resources = new HashSet<>();
+
+    @Setter(AccessLevel.NONE)
+    @OneToMany(mappedBy = "offer")
+    private Set<Topic> topics = new HashSet<>();
 }
