@@ -4,8 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.Instant;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -13,19 +12,19 @@ import java.util.Set;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "tb_course")
-public class Course implements Serializable {
+@Table(name = "tb_offer")
+public class Offer implements Serializable {
 
     @EqualsAndHashCode.Include
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    private String imgUri;
-    private String imgGrayUri;
+    private String edition;
+    private Instant startMoment;
+    private Instant endMoment;
 
-    @Setter(AccessLevel.NONE)
-    @OneToMany(mappedBy = "course")
-    private Set<Offer> offers = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
 }
