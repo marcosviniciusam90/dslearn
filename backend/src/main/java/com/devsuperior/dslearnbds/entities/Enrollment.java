@@ -35,6 +35,10 @@ public class Enrollment implements Serializable {
     @ManyToMany(mappedBy = "enrollmentsDone")
     private Set<Lesson> lessonsDone = new HashSet<>();
 
+    @Setter(AccessLevel.NONE)
+    @OneToMany(mappedBy = "enrollment")
+    private Set<Deliver> deliveries = new HashSet<>();
+
     public User getStudent() {
         return id.getUser();
     }
