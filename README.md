@@ -12,4 +12,5 @@
 
 Material de apoio:</br>
 https://github.com/devsuperior/dscatalog-resources/tree/master/backend </br>
-https://github.com/devsuperior/bds-dslearn
+https://github.com/devsuperior/bds-dslearn </br>
+https://drive.google.com/drive/u/7/folders/11RZcLtmaozrwJO9QTohaKAcESfSd8GIL
