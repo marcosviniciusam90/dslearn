@@ -13,6 +13,10 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 3);
 
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Bem-vindo ao curso!', TIMESTAMP WITH TIME ZONE '2021-06-09T03:00:00Z', false, '/offers/1/resource/1/sections/1', 1);
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Desafio 1: corrigir', TIMESTAMP WITH TIME ZONE '2021-06-15T03:00:00Z', false, '/offers/1/resource/1/sections/1', 1);
+INSERT INTO tb_notification (text, moment, read, route, user_id) VALUES ('Desafio 1: aceito', TIMESTAMP WITH TIME ZONE '2021-06-16T03:00:00Z', false, '/offers/1/resource/1/sections/1', 1);
+
 INSERT INTO tb_course (name, img_Uri, img_Gray_Uri) VALUES ('Bootcamp HTML', 'https://cdn.pixabay.com/photo/2020/05/31/09/40/online-course-5242018_1280.jpg', 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Switch-course-book-grey.svg');
 
 INSERT INTO tb_offer (edition, start_Moment, end_Moment, course_id) VALUES ('1.0', TIMESTAMP WITH TIME ZONE '2021-06-09T03:00:00Z', TIMESTAMP WITH TIME ZONE '2022-06-09T03:00:00Z', 1);
