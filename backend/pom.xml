@@ -11,14 +11,6 @@
 	<groupId>com.devsuperior</groupId>
 	<artifactId>dslearn</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dslearn</name>
-	<description>DSLearn Bootcamp</description>
-
-	<properties>
-		<java.version>11</java.version>
-		<mapstruct.version>1.4.2.Final</mapstruct.version>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -49,7 +41,23 @@
 			<version>${mapstruct.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security.oauth.boot</groupId>
+			<artifactId>spring-security-oauth2-autoconfigure</artifactId>
+		</dependency>
+
 		<!-- Tests dependencies -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -62,6 +70,15 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
+	<name>dslearn</name>
+
+	<description>DSLearn Bootcamp</description>
+
+	<properties>
+		<java.version>11</java.version>
+		<mapstruct.version>1.4.2.Final</mapstruct.version>
+		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>
+	</properties>
 
 	<build>
 		<plugins>
@@ -91,4 +108,16 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
