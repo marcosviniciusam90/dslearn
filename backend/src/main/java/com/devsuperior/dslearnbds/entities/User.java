@@ -41,6 +41,10 @@ public class User implements UserDetails, Serializable {
     @OneToMany(mappedBy = "user")
     private Set<Notification> notifications = new HashSet<>();
 
+    public boolean hasRole(String roleName) {
+        return roles.contains(new Role(null, roleName));
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return roles

@@ -24,9 +24,12 @@ public class UserService implements UserDetailsService {
     private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
     private static final UserMapper USER_MAPPER = UserMapper.INSTANCE;
     private final UserRepository userRepository;
+    private final AuthService authService;
 
     @Transactional(readOnly = true)
     public UserDTO findById(Long id) {
+        authService.validateSelfOrAdmin(id);
+
         Optional<User> optionalEntity = userRepository.findById(id);
         User entity = optionalEntity.orElseThrow(() -> new ResourceNotFoundException(id));
         return USER_MAPPER.entityToDTO(entity);
