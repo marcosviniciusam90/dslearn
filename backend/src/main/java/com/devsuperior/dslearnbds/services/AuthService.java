@@ -26,6 +26,7 @@ public class AuthService {
         }
     }
 
+    @Transactional(readOnly = true)
     public void validateSelfOrAdmin(Long userId) {
         User user = getAuthenticatedUser();
         if(!user.getId().equals(userId) && !user.hasRole("ROLE_ADMIN")) {
