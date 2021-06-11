@@ -9,6 +9,7 @@
 - H2
 - Lombok
 - MapStruct
+- OAuth2/JWT
 
 Material de apoio:</br>
 https://github.com/devsuperior/dscatalog-resources/tree/master/backend </br>
