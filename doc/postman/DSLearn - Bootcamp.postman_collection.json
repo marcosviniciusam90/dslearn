@@ -217,12 +217,18 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{host}}/notifications",
+							"raw": "{{host}}/notifications?unreadOnly=true",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"notifications"
+							],
+							"query": [
+								{
+									"key": "unreadOnly",
+									"value": "true"
+								}
 							]
 						}
 					},
